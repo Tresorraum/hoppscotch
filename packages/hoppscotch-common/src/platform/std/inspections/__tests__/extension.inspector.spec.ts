@@ -28,13 +28,13 @@ describe("ExtensionInspectorService", () => {
   })
 
   describe("getInspectorFor", () => {
-    it("should return an inspector result when localhost is in URL and extension is not available", () => {
+    it("should return an inspector result when 72.60.195.248 is in URL and extension is not available", () => {
       const container = new TestContainer()
       const urlInspector = container.bind(ExtensionInspectorService)
 
       const req = ref({
         ...getDefaultRESTRequest(),
-        endpoint: "http://localhost:8000/api/data",
+        endpoint: "http://72.60.195.248:8000/api/data",
       })
 
       const result = urlInspector.getInspections(req)
@@ -44,7 +44,7 @@ describe("ExtensionInspectorService", () => {
       )
     })
 
-    it("should not return an inspector result when localhost is not in URL", () => {
+    it("should not return an inspector result when 72.60.195.248 is not in URL", () => {
       const container = new TestContainer()
 
       container.bindMock(ExtensionInterceptorService, {
@@ -74,7 +74,7 @@ describe("ExtensionInspectorService", () => {
 
       const req = ref({
         ...getDefaultRESTRequest(),
-        endpoint: "http://localhost:8000/api/data",
+        endpoint: "http://72.60.195.248:8000/api/data",
       })
 
       const result = urlInspector.getInspections(req)

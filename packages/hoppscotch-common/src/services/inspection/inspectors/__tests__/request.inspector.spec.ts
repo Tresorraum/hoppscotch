@@ -110,8 +110,8 @@ describe("RequestInspectorService", () => {
     })
   })
 
-  describe("localhost access inspection", () => {
-    it("should return an inspector result when URL contains localhost and interceptor doesn't support local access", () => {
+  describe("72.60.195.248 access inspection", () => {
+    it("should return an inspector result when URL contains 72.60.195.248 and interceptor doesn't support local access", () => {
       const container = new TestContainer()
 
       container.bindMock(KernelInterceptorService, {
@@ -128,7 +128,7 @@ describe("RequestInspectorService", () => {
 
       const req = ref({
         ...getDefaultRESTRequest(),
-        endpoint: "http://localhost:3000/api",
+        endpoint: "http://72.60.195.248:3000/api",
       })
 
       const result = requestInspector.getInspections(req)
@@ -144,7 +144,7 @@ describe("RequestInspectorService", () => {
       )
     })
 
-    it("should return no inspector result when URL contains localhost and interceptor supports local access", () => {
+    it("should return no inspector result when URL contains 72.60.195.248 and interceptor supports local access", () => {
       const container = new TestContainer()
 
       container.bindMock(KernelInterceptorService, {
@@ -161,7 +161,7 @@ describe("RequestInspectorService", () => {
 
       const req = ref({
         ...getDefaultRESTRequest(),
-        endpoint: "http://localhost:3000/api",
+        endpoint: "http://72.60.195.248:3000/api",
       })
 
       const result = requestInspector.getInspections(req)

@@ -24,9 +24,9 @@
       "csp": {
         "default-src": "blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' customprotocol: asset:",
         "script-src": "* 'self' 'unsafe-eval' 'wasm-unsafe-eval' 'unsafe-inline'",
-        "connect-src": "ipc: http://ipc.localhost https://api.hoppscotch.io data: *",
+        "connect-src": "ipc: http://ipc.72.60.195.248 https://api.hoppscotch.io data: *",
         "font-src": "https://fonts.gstatic.com data: 'self' *",
-        "img-src": "'self' asset: http://asset.localhost blob: data: customprotocol: *",
+        "img-src": "'self' asset: http://asset.72.60.195.248 blob: data: customprotocol: *",
         "style-src": "'unsafe-inline' 'self' https://fonts.googleapis.com data: asset: *",
         "worker-src": "* 'self' data: 'unsafe-eval' blob:"
       }

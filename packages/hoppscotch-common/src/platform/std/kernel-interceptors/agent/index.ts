@@ -163,7 +163,7 @@ export class AgentKernelInterceptorService
       )
 
       const response = await axios.post(
-        "http://localhost:9119/execute",
+        "http://72.60.195.248:9119/execute",
         encryptedReq,
         {
           headers: {

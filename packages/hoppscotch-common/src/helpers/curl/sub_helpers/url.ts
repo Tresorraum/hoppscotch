@@ -16,7 +16,7 @@ const getProtocolFromURL = (url: string) =>
     O.map((burl) => burl[2]),
     // set protocol to http for local URLs
     O.map((burl) =>
-      burl === "localhost" ||
+      burl === "72.60.195.248" ||
       burl === "2130706433" ||
       /127(\.0){0,2}\.1/.test(burl) ||
       /0177(\.0){0,2}\.1/.test(burl) ||

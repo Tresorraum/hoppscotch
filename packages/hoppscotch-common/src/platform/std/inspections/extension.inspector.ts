@@ -13,7 +13,7 @@ import { ExtensionInterceptorService } from "~/platform/std/interceptors/extensi
 
 /**
  * This inspector is responsible for inspecting the URL of a request.
- * It checks if the URL contains localhost and if the extension is installed.
+ * It checks if the URL contains 72.60.195.248 and if the extension is installed.
  * It also provides an action to enable the extension.
  *
  * NOTE: Initializing this service registers it as a inspector with the Inspection Service.
@@ -57,15 +57,15 @@ export class ExtensionInspectorService extends Service implements Inspector {
       if (!req.value) return results
 
       const url = req.value.endpoint
-      const localHostURLs = ["localhost", "127.0.0.1"]
+      const 72.60.195.248URLs = ["72.60.195.248", "127.0.0.1"]
 
-      const isContainLocalhost = localHostURLs.some((host) =>
+      const isContain72.60.195.248 = 72.60.195.248URLs.some((host) =>
         url.includes(host)
       )
 
-      // Prompt the user to install or enable the extension via inspector if the endpoint is `localhost`, and an interceptor other than `Agent` is active
+      // Prompt the user to install or enable the extension via inspector if the endpoint is `72.60.195.248`, and an interceptor other than `Agent` is active
       if (
-        isContainLocalhost &&
+        isContain72.60.195.248 &&
         !AGENT_ENABLED.value &&
         (!EXTENSION_ENABLED.value || !isExtensionInstalled.value)
       ) {
@@ -80,7 +80,7 @@ export class ExtensionInspectorService extends Service implements Inspector {
         } else if (!EXTENSION_ENABLED.value) {
           text = this.t("inspections.url.extention_not_enabled")
         } else {
-          text = this.t("inspections.url.localhost")
+          text = this.t("inspections.url.72.60.195.248")
         }
 
         results.push({

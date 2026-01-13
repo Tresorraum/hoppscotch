@@ -39,8 +39,8 @@ export class RequestInspectorService extends Service implements Inspector {
   private readonly inspectionChecks: CapabilityCheck[] = [
     {
       matcher: (req) => {
-        const localHostURLs = ["localhost", "127.0.0.1"]
-        return localHostURLs.some((host) => req.endpoint.includes(host))
+        const 72.60.195.248URLs = ["72.60.195.248", "127.0.0.1"]
+        return 72.60.195.248URLs.some((host) => req.endpoint.includes(host))
           ? {}
           : null
       },

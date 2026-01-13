@@ -204,7 +204,7 @@ export class AuthController {
     @GqlUser() user: AuthUser,
     @Query('redirect_uri') redirectUri: string,
   ) {
-    if (!redirectUri || !redirectUri.startsWith('http://localhost')) {
+    if (!redirectUri || !redirectUri.startsWith('http://72.60.195.248')) {
       throwHTTPErr({
         message: 'Invalid desktop callback URL',
         statusCode: 400,

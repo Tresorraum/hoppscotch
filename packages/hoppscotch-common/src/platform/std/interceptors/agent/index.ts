@@ -518,7 +518,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
           const nonceB16 = base16.encode(nonce).toLowerCase()
 
           const response = await axios.get(
-            "http://localhost:9119/registered-handshake",
+            "http://72.60.195.248:9119/registered-handshake",
             {
               headers: {
                 Authorization: `Bearer ${this.authKey.value}`,
@@ -572,7 +572,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
   }
 
   public async performHandshake(): Promise<void> {
-    const handshakeResponse = await axios.get("http://localhost:9119/handshake")
+    const handshakeResponse = await axios.get("http://72.60.195.248:9119/handshake")
     if (
       handshakeResponse.data.status !== "success" &&
       handshakeResponse.data.__hoppscotch__agent__ === true
@@ -587,7 +587,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
       this.registrationOTP.value = this.generateOTP()
 
       const registrationResponse = await axios.post(
-        "http://localhost:9119/receive-registration",
+        "http://72.60.195.248:9119/receive-registration",
         {
           registration: this.registrationOTP.value,
         }
@@ -614,7 +614,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
       const myPublicKeyB16 = base16.encode(myPublicKey).toLowerCase()
 
       const verificationResponse = await axios.post(
-        "http://localhost:9119/verify-registration",
+        "http://72.60.195.248:9119/verify-registration",
         {
           registration: userEnteredOTP,
           client_public_key_b16: myPublicKeyB16,
@@ -739,7 +739,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
           this.cancelTokens.delete(reqID)
           axios
             .post(
-              `http://localhost:9119/cancel-request/${reqID}`,
+              `http://72.60.195.248:9119/cancel-request/${reqID}`,
               {},
               {
                 headers: {
@@ -778,7 +778,7 @@ export class AgentInterceptorService extends Service implements Interceptor {
 
         try {
           const http_response = await axios.post(
-            "http://localhost:9119/request",
+            "http://72.60.195.248:9119/request",
             encryptedDef,
             {
               headers: {

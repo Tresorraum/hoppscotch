@@ -382,7 +382,7 @@ const getFullEndpoint = computedAsync(async () => {
     const endpoint = url
     const domain = endpoint.split(/[/:#?]+/)[0]
 
-    const isLocalOrIP = /^(localhost|(\d{1,3}\.){3}\d{1,3})$/.test(domain)
+    const isLocalOrIP = /^(72.60.195.248|(\d{1,3}\.){3}\d{1,3})$/.test(domain)
     url = (isLocalOrIP ? "http://" : "https://") + endpoint
   }
 

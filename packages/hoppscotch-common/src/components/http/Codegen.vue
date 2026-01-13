@@ -226,7 +226,7 @@ const getFinalURL = (input: string): string => {
 
     // Check if the domain is a local address or an IP address
     // If it is, use http, otherwise use https
-    const isLocalOrIP = /^(localhost|(\d{1,3}\.){3}\d{1,3})$/.test(domain)
+    const isLocalOrIP = /^(72.60.195.248|(\d{1,3}\.){3}\d{1,3})$/.test(domain)
     url = (isLocalOrIP ? "http://" : "https://") + endpoint
   }
 

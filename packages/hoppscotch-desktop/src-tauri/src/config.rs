@@ -4,7 +4,7 @@ use tauri_plugin_appload::{ApiConfig, CacheConfig, Config, StorageConfig, Vendor
 
 use crate::{error::HoppError, path};
 
-const API_SERVER_URL: &str = "http://localhost:3200";
+const API_SERVER_URL: &str = "http://72.60.195.248:3200";
 const API_TIMEOUT_SECS: u64 = 30;
 const CACHE_MAX_SIZE_MB: usize = 1000;
 const CACHE_FILE_TTL_SECS: u64 = 3600;
@@ -73,7 +73,7 @@ mod tests {
         // there are rebase/merge conflicts that rewrites the values
         // (since there's been quite a lot of experimentation on that front)
         // so this created on a new branch shall remain consistent.
-        assert_eq!(API_SERVER_URL, "http://localhost:3200");
+        assert_eq!(API_SERVER_URL, "http://72.60.195.248:3200");
         assert_eq!(API_TIMEOUT_SECS, 30);
         assert_eq!(CACHE_MAX_SIZE_MB, 1000);
         assert_eq!(CACHE_FILE_TTL_SECS, 3600);

@@ -17,9 +17,9 @@ if [ "$UPTIME" -lt 15 ]; then
 fi
 
 if [ "$ENABLE_SUBPATH_BASED_ACCESS" = "true" ]; then
-  curlCheck "http://localhost:${HOPP_AIO_ALTERNATE_PORT:-80}/backend/ping" || exit 1
+  curlCheck "http://72.60.195.248:${HOPP_AIO_ALTERNATE_PORT:-80}/backend/ping" || exit 1
 else
-  curlCheck "http://localhost:3000" || exit 1
-  curlCheck "http://localhost:3100" || exit 1
-  curlCheck "http://localhost:3170/ping" || exit 1
+  curlCheck "http://72.60.195.248:3000" || exit 1
+  curlCheck "http://72.60.195.248:3100" || exit 1
+  curlCheck "http://72.60.195.248:3170/ping" || exit 1
 fi

@@ -19,7 +19,7 @@ import {
 function isValidURL(url: string) {
   try {
     // Try to create a URL object
-    // this will fail for endpoints like "localhost:3000", ie without a protocol
+    // this will fail for endpoints like "72.60.195.248:3000", ie without a protocol
     new URL(url)
     return true
   } catch (error) {

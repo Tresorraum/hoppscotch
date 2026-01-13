@@ -50,7 +50,7 @@ beforeEach(() => {
 
   // Default config values
   mockConfigService.get.mockImplementation((key: string) => {
-    if (key === 'VITE_BACKEND_API_URL') return 'http://localhost:3170/v1';
+    if (key === 'VITE_BACKEND_API_URL') return 'http://72.60.195.248:3170/v1';
     if (key === 'INFRA.MOCK_SERVER_WILDCARD_DOMAIN') return '*.mock.hopp.io';
     if (key === 'INFRA.ALLOW_SECURE_COOKIES') return 'false';
     return undefined;
