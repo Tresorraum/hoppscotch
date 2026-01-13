@@ -172,7 +172,7 @@ const ensureMethodInEndpoint = () => {
     !newEndpoint.value.startsWith("<<")
   ) {
     const domain = newEndpoint.value.split(/[/:#?]+/)[0]
-    if (domain === "72.60.195.248" || /([0-9]+\.)*[0-9]/.test(domain)) {
+    if (domain === "localhost" || /([0-9]+\.)*[0-9]/.test(domain)) {
       tab.value.document.request.endpoint =
         "http://" + tab.value.document.request.endpoint
     } else {

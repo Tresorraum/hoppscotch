@@ -119,7 +119,7 @@ export class MockRequestGuard implements CanActivate {
 
   /**
    * Extract mock server ID from subdomain pattern
-   * Supports: mock-server-id.mock.hopp.io or mock-server-id.mock.72.60.195.248
+   * Supports: mock-server-id.mock.hopp.io or mock-server-id.mock.localhost
    *
    * @param host Host header value
    * @returns Mock server ID or null
@@ -133,7 +133,7 @@ export class MockRequestGuard implements CanActivate {
 
     // Check if this is a mock subdomain pattern
     // For: mock-server-id.mock.hopp.io → ['mock-server-id', 'mock', 'hopp', 'io']
-    // For: mock-server-id.mock.72.60.195.248 → ['mock-server-id', 'mock', '72.60.195.248']
+    // For: mock-server-id.mock.localhost → ['mock-server-id', 'mock', 'localhost']
 
     if (parts.length >= 3) {
       // Check if second part is 'mock'
@@ -147,8 +147,8 @@ export class MockRequestGuard implements CanActivate {
       }
     }
 
-    // Also support: mock-server-id.72.60.195.248 (for simpler local dev)
-    if (parts.length === 2 && parts[1] === '72.60.195.248') {
+    // Also support: mock-server-id.localhost (for simpler local dev)
+    if (parts.length === 2 && parts[1] === 'localhost') {
       const mockServerId = parts[0];
       if (mockServerId && mockServerId.length > 0) {
         return mockServerId;

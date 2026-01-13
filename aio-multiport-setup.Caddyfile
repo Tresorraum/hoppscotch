@@ -22,10 +22,10 @@
 	
 	handle @mock {
 		rewrite * /mock{uri}
-		reverse_proxy 72.60.195.248:8080
+		reverse_proxy localhost:8080
 	}
 	
 	handle {
-		reverse_proxy 72.60.195.248:8080
+		reverse_proxy localhost:8080
 	}
 }

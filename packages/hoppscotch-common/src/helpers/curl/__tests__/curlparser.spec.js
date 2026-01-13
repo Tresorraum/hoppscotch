@@ -51,9 +51,9 @@ const samples = [
         -H 'Accept-Language: en'
         --compressed
         -H 'Content-Type: application/hal+json;charset=utf-8'
-        -H 'Origin: http://72.60.195.248:3012'
+        -H 'Origin: http://localhost:3012'
         -H 'Connection: keep-alive'
-        -H 'Referer: http://72.60.195.248:3012/crm/company/4'
+        -H 'Referer: http://localhost:3012/crm/company/4'
         --data-raw '{"id":4,"crm_company_id":4,"industry_primary_id":2,"industry_head_id":2,"industry_body_id":2,"code":"01","barcode":"222010101","summary":"Healt-Seasoning-Basic-Hori-Kello","name":"Kellolaa","sub_code":"01","sub_name":"Hori","created_at":"2020-06-08 08:50:02","updated_at":"2020-06-08 08:50:02","company":4,"primary":{"id":2,"code":"2","name":"Healt","created_at":"2020-05-19 07:05:02","updated_at":"2020-05-19 07:09:28"},"head":{"id":2,"code":"2","name":"Seasoning","created_at":"2020-04-14 19:34:33","updated_at":"2020-04-14 19:34:33"},"body":{"id":2,"code":"2","name":"Basic","created_at":"2020-04-14 19:33:54","updated_at":"2020-04-14 19:33:54"},"contacts":[]}'
     `,
     response: makeRESTRequest({
@@ -130,7 +130,7 @@ const samples = [
         {
           active: true,
           key: "Origin",
-          value: "http://72.60.195.248:3012",
+          value: "http://localhost:3012",
           description: "",
         },
         {
@@ -142,7 +142,7 @@ const samples = [
         {
           active: true,
           key: "Referer",
-          value: "http://72.60.195.248:3012/crm/company/4",
+          value: "http://localhost:3012/crm/company/4",
           description: "",
         },
       ],
@@ -173,11 +173,11 @@ const samples = [
     }),
   },
   {
-    command: `curl -X POST -d '{"foo":"bar"}' http://72.60.195.248:1111/hello/world/?bar=baz&buzz`,
+    command: `curl -X POST -d '{"foo":"bar"}' http://localhost:1111/hello/world/?bar=baz&buzz`,
     response: makeRESTRequest({
       method: "POST",
       name: "Untitled",
-      endpoint: "http://72.60.195.248:1111/hello/world/?buzz",
+      endpoint: "http://localhost:1111/hello/world/?buzz",
       auth: { authType: "inherit", authActive: true },
       body: {
         contentType: "application/json",
@@ -264,11 +264,11 @@ const samples = [
   },
   {
     command:
-      "curl -X GET 72.60.195.248 -H 'Accept: application/json' --user root:toor",
+      "curl -X GET localhost -H 'Accept: application/json' --user root:toor",
     response: makeRESTRequest({
       method: "GET",
       name: "Untitled",
-      endpoint: "http://72.60.195.248/",
+      endpoint: "http://localhost/",
       auth: {
         authType: "basic",
         authActive: true,
@@ -296,11 +296,11 @@ const samples = [
   },
   {
     command:
-      "curl -X GET 72.60.195.248 --header 'Authorization: Basic dXNlcjpwYXNz'",
+      "curl -X GET localhost --header 'Authorization: Basic dXNlcjpwYXNz'",
     response: makeRESTRequest({
       method: "GET",
       name: "Untitled",
-      endpoint: "http://72.60.195.248/",
+      endpoint: "http://localhost/",
       auth: {
         authType: "basic",
         authActive: true,
@@ -328,11 +328,11 @@ const samples = [
   },
   {
     command:
-      "curl -X GET 72.60.195.248:9900 --header 'Authorization: Basic 77898dXNlcjpwYXNz'",
+      "curl -X GET localhost:9900 --header 'Authorization: Basic 77898dXNlcjpwYXNz'",
     response: makeRESTRequest({
       method: "GET",
       name: "Untitled",
-      endpoint: "http://72.60.195.248:9900/",
+      endpoint: "http://localhost:9900/",
       auth: {
         authType: "inherit",
         authActive: true,
@@ -358,11 +358,11 @@ const samples = [
   },
   {
     command:
-      "curl -X GET 72.60.195.248 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'",
+      "curl -X GET localhost --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'",
     response: makeRESTRequest({
       method: "GET",
       name: "Untitled",
-      endpoint: "http://72.60.195.248/",
+      endpoint: "http://localhost/",
       auth: {
         authType: "bearer",
         authActive: true,
@@ -497,11 +497,11 @@ const samples = [
   },
   {
     command:
-      "curl 72.60.195.248 -H 'content-type: multipart/form-data; boundary=------------------------d74496d66958873e' --data '-----------------------------d74496d66958873e\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"test.txt\"\\r\\nContent-Type: text/plain\\r\\n\\r\\nHello World\\r\\n\\r\\n-----------------------------d74496d66958873e--\\r\\n'",
+      "curl localhost -H 'content-type: multipart/form-data; boundary=------------------------d74496d66958873e' --data '-----------------------------d74496d66958873e\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"test.txt\"\\r\\nContent-Type: text/plain\\r\\n\\r\\nHello World\\r\\n\\r\\n-----------------------------d74496d66958873e--\\r\\n'",
     response: makeRESTRequest({
       method: "POST",
       name: "Untitled",
-      endpoint: "http://72.60.195.248/",
+      endpoint: "http://localhost/",
       auth: {
         authActive: true,
         authType: "inherit",

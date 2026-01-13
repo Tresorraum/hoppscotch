@@ -198,7 +198,7 @@ export class KernelInterceptorAgentStore extends Service {
   public async checkAgentStatus(): Promise<void> {
     try {
       const handshakeResponse = await axios.get(
-        "http://72.60.195.248:9119/handshake"
+        "http://localhost:9119/handshake"
       )
       this.isAgentRunning.value =
         handshakeResponse.data.status === "success" &&
@@ -216,7 +216,7 @@ export class KernelInterceptorAgentStore extends Service {
     const otp = Math.floor(100000 + Math.random() * 900000).toString()
 
     const response = await axios.post(
-      "http://72.60.195.248:9119/receive-registration",
+      "http://localhost:9119/receive-registration",
       { registration: otp }
     )
 
@@ -233,7 +233,7 @@ export class KernelInterceptorAgentStore extends Service {
     const myPublicKeyB16 = base16.encode(myPublicKey).toLowerCase()
 
     const response = await axios.post(
-      "http://72.60.195.248:9119/verify-registration",
+      "http://localhost:9119/verify-registration",
       {
         registration: otp,
         client_public_key_b16: myPublicKeyB16,
@@ -262,7 +262,7 @@ export class KernelInterceptorAgentStore extends Service {
     auth_key_hash: string
   }> {
     try {
-      const response = await axios.get("http://72.60.195.248:9119/registration", {
+      const response = await axios.get("http://localhost:9119/registration", {
         headers: {
           Authorization: `Bearer ${this.authKey.value}`,
         },
@@ -344,7 +344,7 @@ export class KernelInterceptorAgentStore extends Service {
   public async cancelRequest(reqId: number): Promise<void> {
     try {
       await axios.post(
-        `http://72.60.195.248:9119/cancel/${reqId}`,
+        `http://localhost:9119/cancel/${reqId}`,
         {},
         {
           headers: {

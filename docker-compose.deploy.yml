@@ -52,7 +52,7 @@ services:
           "/dev/null",
           "-w",
           "%{http_code}",
-          "http://72.60.195.248:80",
+          "http://localhost:80",
         ]
       interval: 2s
       timeout: 10s

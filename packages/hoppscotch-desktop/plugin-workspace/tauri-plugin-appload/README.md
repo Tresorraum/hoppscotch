@@ -77,7 +77,7 @@ await load({
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `api.serverUrl` | Bundle server URL | `http://72.60.195.248:3200` |
+| `api.serverUrl` | Bundle server URL | `http://localhost:3200` |
 | `cache.maxSize` | Maximum cache size | `100MB` |
 | `cache.filesTtl` | File time-to-live | `1 hour` |
 | `storage.maxBundleSize` | Maximum bundle size | `50MB` |

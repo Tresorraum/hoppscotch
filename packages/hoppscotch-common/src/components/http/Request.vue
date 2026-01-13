@@ -445,7 +445,7 @@ const ensureMethodInEndpoint = () => {
   tab.value.document.request.endpoint = endpoint
   if (!/^http[s]?:\/\//.test(endpoint) && !endpoint.startsWith("<<")) {
     const domain = endpoint.split(/[/:#?]+/)[0]
-    if (domain === "72.60.195.248" || /([0-9]+\.)*[0-9]/.test(domain)) {
+    if (domain === "localhost" || /([0-9]+\.)*[0-9]/.test(domain)) {
       tab.value.document.request.endpoint = "http://" + endpoint
     } else {
       tab.value.document.request.endpoint = "https://" + endpoint

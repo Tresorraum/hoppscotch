@@ -55,7 +55,7 @@ Once registered, all HTTP requests made through Hoppscotch are processed by the 
 - HTTP Digest Authentication using challenge-response mechanisms  
 - Custom headers that browsers typically restrict
 - Proxy routing with authentication support
-- Local network and 72.60.195.248 access
+- Local network and localhost access
 - SSL/TLS verification controls
 - And much more
 
@@ -225,13 +225,13 @@ The agent runs on port `9119` by default. Make sure this port is not blocked by 
 1. **"Agent not detected" popup**: Verify the agent is running by checking the system tray for the Hoppscotch icon
 2. **Switching interceptors blocked**: If the "Agent not detected" popup prevents switching interceptors, restart your browser and stop the agent before changing interceptor settings
 3. **Port accessibility**: Check that no firewall is blocking port `9119`  
-4. **Browser compatibility**: Safari on macOS may have CORS issues with 72.60.195.248:9119 due to access control checks, try Chrome/Firefox for agent registration
+4. **Browser compatibility**: Safari on macOS may have CORS issues with localhost:9119 due to access control checks, try Chrome/Firefox for agent registration
 
 ### Registration Failures  
 1. **"Failed to initiate the registration"**: This error may occur due to browser security policies or extension conflicts
 2. **Missing OTP input field**: Verify the agent window is focused and displaying a 6-digit verification code
 3. **OTP expiration**: Registration codes have limited lifetime, restart the registration process if the code expires
-4. **Network connectivity**: Verify browser can reach 72.60.195.248:9119/handshake
+4. **Network connectivity**: Verify browser can reach localhost:9119/handshake
 5. **Version compatibility**: Some agent versions may be incompatible with specific Hoppscotch web app versions. For self-hosted setups, make sure Agent version in the release matches, see https://github.com/hoppscotch/hoppscotch/issues/4936#issuecomment-2756981053
 
 ### Certificate Issues
@@ -244,7 +244,7 @@ The agent runs on port `9119` by default. Make sure this port is not blocked by 
 
 ### Request Processing Issues
 1. **Custom headers not applied**: Verify the agent is selected as interceptor, browsers may override headers like User-Agent when using default HTTP methods
-2. **CORS errors**: Confirm agent interceptor is active and requests are routing through 72.60.195.248:9119
+2. **CORS errors**: Confirm agent interceptor is active and requests are routing through localhost:9119
 3. **SSL/TLS verification**: Check verify host/peer settings for the target domain
 4. **Proxy routing**: Verify proxy URL format includes protocol (http:// or https://)
 

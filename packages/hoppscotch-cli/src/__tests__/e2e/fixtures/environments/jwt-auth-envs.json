@@ -5,7 +5,7 @@
   "variables": [
     {
       "key": "url",
-      "value": "http://72.60.195.248:8888/auth/jwt"
+      "value": "http://localhost:8888/auth/jwt"
     },
     {
       "key": "algorithm",

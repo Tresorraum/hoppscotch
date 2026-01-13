@@ -42,7 +42,7 @@ pub struct StorageConfig {
 impl Default for ApiConfig {
     fn default() -> Self {
         Self {
-            server_url: "http://72.60.195.248:3200".to_string(),
+            server_url: "http://localhost:3200".to_string(),
             timeout: Duration::from_secs(30),
         }
     }
