@@ -2,8 +2,6 @@
 # has a container with a Postgres instance running.
 # You can tweak around this file to match your instances
 
-
-
 # PROFILES EXPLANATION:
 #
 # We use Docker Compose profiles to manage different deployment scenarios and avoid port conflicts.
