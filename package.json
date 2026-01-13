@@ -1,0 +1,68 @@
+{
+  "name": "hoppscotch-app",
+  "version": "3.0.1",
+  "description": "Open source API development ecosystem",
+  "author": "Hoppscotch (support@hoppscotch.io)",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.23.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "dev": "pnpm -r do-dev",
+    "gen-gql": "cross-env GQL_SCHEMA_EMIT_LOCATION='../../../gql-gen/backend-schema.gql' pnpm -r generate-gql-sdl",
+    "generate": "pnpm -r do-build-prod",
+    "start": "http-server packages/hoppscotch-selfhost-web/dist -p 3000",
+    "lint": "pnpm -r do-lint",
+    "typecheck": "pnpm -r do-typecheck",
+    "lintfix": "pnpm -r do-lintfix",
+    "pre-commit": "pnpm -r do-lint && pnpm -r do-typecheck",
+    "test": "pnpm -r do-test",
+    "generate-ui": "pnpm -r do-build-ui"
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "20.2.0",
+    "@commitlint/config-conventional": "20.2.0",
+    "@hoppscotch/ui": "0.2.5",
+    "@types/node": "24.10.1",
+    "cross-env": "10.1.0",
+    "http-server": "14.1.1",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nestjs-modules/mailer>mjml": "5.0.0-alpha.4",
+      "apiconnect-wsdl": "2.0.36",
+      "body-parser": "2.2.1",
+      "cross-spawn": "7.0.6",
+      "execa@0.10.0": "2.0.0",
+      "jws@<3.2.3": "3.2.3",
+      "nodemailer@<7.0.11": "7.0.11",
+      "glob@<11.1.0": "11.1.0",
+      "subscriptions-transport-ws>ws": "7.5.10",
+      "vue": "3.5.26",
+      "form-data": "4.0.4",
+      "ws": "8.17.1"
+    },
+    "onlyBuiltDependencies": [
+      "@apollo/protobufjs",
+      "@import-meta-env/unplugin",
+      "@nestjs/core",
+      "@prisma/client",
+      "@prisma/engines",
+      "@swc/core",
+      "argon2",
+      "bcrypt",
+      "canvas",
+      "core-js",
+      "esbuild",
+      "isolated-vm",
+      "prisma",
+      "vue-demi"
+    ]
+  }
+}
